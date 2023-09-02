@@ -30,20 +30,19 @@ class Solution
     int maxDistance(int arr[], int n)
     {
 	// Your code here
-    	HashMap<Integer, Integer> map = new HashMap<>();
-    	
-    	int maxDis = 0;
-    	
-    	for(int i = 0; i<n; i++){
-    	    if(map.containsKey(arr[i])){
-    	        maxDis = Math.max(maxDis, i - map.get(arr[i]));
-    	    }
-    	    else{
-    	        map.put(arr[i], i);
-    	    }
-    	}
-    	
-    	return maxDis;
+	    HashMap<Integer, Integer> map = new HashMap<>();
 	
+	    int max = 0;
+	    
+	    for(int i = 0; i<arr.length; i++){
+	        if(map.containsKey(arr[i])){
+	            max = Math.max(max, i - map.get(arr[i]));
+	        }
+	        else{
+	            map.put(arr[i], i);
+	        }
+	    }
+	    
+	    return max;
     }
 }
