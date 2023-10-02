@@ -26,20 +26,22 @@ class SortedStack{
 /*Complete the function below*/
 class GfG{
     
-    public void newFun(Stack<Integer> s, int i){
-        if(s.isEmpty() || s.peek() <= i){
-            s.push(i);
+    public void newFun(Stack<Integer> s, int ele){
+        if(s.isEmpty() || s.peek()<=ele){
+            s.push(ele);
             return;
         }
-        int ele = s.pop();
-        newFun(s, i);
-        s.push(ele);
+        int e = s.pop();
+        newFun(s,ele);
+        s.push(e);
     }
+    
     public void helper(Stack<Integer> s){
-        if(s.size() == 0) return;
-        int ele = s.pop();
-        helper(s);
-        newFun(s, ele);
+        if(!s.isEmpty()){
+            int ele = s.pop();
+            helper(s);
+            newFun(s, ele);
+        }
     }
 	public Stack<Integer> sort(Stack<Integer> s)
 	{
